@@ -1,0 +1,16 @@
+{
+  "name": "translab",
+  "version": "0.0.1",
+  "description": "mejoras proyecto translab nivelacion",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "test",
+    "development",
+    "translab"
+  ],
+  "author": "alejandra kaybel martinez gonzalez",
+  "license": "ISC"
+}
