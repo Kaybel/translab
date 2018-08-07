@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!--se linkean bootstrap y fuentes de texto-->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--se linkea css y favicon-->
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/src/docs/imagen.png">
+  <link rel="stylesheet" href="assets/src/css/style.css">
+  <title>TRANS-LAB</title>
+</head>
+
+<body>
+  <!--página de inicio-->
+  <section id="index">
+    <div class="text-center">
+      <img src="assets/src/docs/imagen.png" class="rounded" alt="imagen logo de trans lab">
+    </div>
+    <p id="trans">TRANS-LAB</p>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <form>
+            <div class="form-group-row">
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" placeholder="Porfavor ingresa tu email">
+              </div>
+            </div>
+            <div class="form-group-row">
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" placeholder="Porfavor ingresa tu contraseña">
+              </div>
+            </div>
+            <div class="form-group-row">
+              <div class="col-sm-10">
+                <button type="submit" class="btnIndex" id="startBtn" onclick="showOptions()">INICIAR SESIÓN</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <p id="regRight">¿No tienes cuenta?</p>
+        <button type="submit" id="inher" onclick="showRegisterPage()">REGÍSTRATE</button>
+      </div>
+    </div>
+  </section>
+
+  <!--página de registro (ya se implemento localStorage)-->
+  <section class="registro" id="registro">
+    <form>
+      <div class="form-row">
+        <div class="col-md-4 mb-3">
+          <label for="validationServer01">Nombre</label>
+          <input type="text" class="form-control is-valid" id="validationServer01" placeholder="Ingresa tu nombre" required>
+          <div class="valid-feedback"> </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label for="validationServer02">Apellido</label>
+          <input type="text" class="form-control is-valid" id="validationServer02" placeholder="Ingresa tu apellido" required>
+          <div class="valid-feedback"> </div>
+        </div>
+        <div class="col-md-4 mb-3" id="mail">
+          <label for="validationServerUsername">Email</label>
+          <div class="input-group">
+            <input type="text" class="form-control is-valid" id="validationServerUsername" placeholder="Ingresa tu mail" aria-describedby="inputGroupPrepend3"
+              required>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="col-md-6 mb-3">
+          <label for="validationServer03">Contraseña</label>
+          <input type="password" class="form-control is-valid" maxlength='8' minlength='6' id="validationServer03" placeholder="Ingresa tu contraseña"
+            required id="pass">
+          <div class="invalid-feedback">Debe poseer máximo 8 carácteres y sólo pueden ser números</div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+          <label class="form-check-label" for="invalidCheck">
+            Estoy de acuerdo con los
+            <!-- Button trigger modal -->
+            <button type="button" id="conditionsPage" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+              términos y condiciones
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <strong>Información del Usuario. </strong> En el transcurso del tiempo que usted haga uso de los servicios puestos
+                    a su disposición en o a través de la aplicación TRANS-LAB, se le puede pedir que nos proporcione cierta
+                    información personalizada (dicha información en lo sucesivo "Información del Usuario").
+                    <strong>Las políticas de uso y recopilación de información. </strong> con respecto a la privacidad de dicha Información
+                    del Usuario se establecen en la Política de Privacidad del Sitio, la cual está incorporada al mismo como
+                    referencia para todos los propósitos. Usted reconoce y acepta ser el único responsable de la exactitud
+                    del contenido de la Información del Usuario.
+                    <br>
+                    <strong>Conducta Prohibida del Usuario. </strong> Usted garantiza y está de acuerdo en que, mientras se encuentre
+                    gestionando o utilizando la aplicación TRANS-LAB, usted no: (a) desvirtuará su afiliación con alguna
+                    otra persona o entidad; (b) intentará ganar acceso no autorizado a otras áreas (c) usará a manera desprestigiosa
+                    la información que en la misma se encuentre.
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">He leido los terminos</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </label>
+        </div>
+      </div>
+      <button type="submit" onclick="showOptions()">Registrarme</button>
+    </form>
+  </section>
+      <!--pagina de fonde donde aparecen botones que redireccionan a las mismas páginas que el dropdown-->
+      <section id="options">
+        <button class="start" id="startQuestion d-none" onclick="showComunAnswers()"> Preguntas frecuentes </button>
+        <button class="start" id="startProfile" onclick="showProfile()"> Mi perfil </button>
+        <button class="start" id="startCash" onclick="checkCash()"> Ver saldo</button>
+        <button class="start" id="startCalculate" onclick="calculate()"> Calcular tarifa</button>
+      </section>
+      <!--informacion dentro del dropdown-->
+      <section id="burgerQuestions">
+        <div class="pos-f-t">
+          <div class="collapse" id="navbarToggleExternalContent">
+            <div class="bg-dark p-4">
+              <button class="start" id="startQuestion" onclick="showComunAnswers()"> Preguntas frecuentes </button>
+              <button class="start" id="startProfile" onclick="showProfile()"> Mi perfil </button>
+              <button class="start" id="startCash" onclick="checkCash()"> Ver saldo</button>
+              <button class="start" id="startCalculate" onclick="calculate()"> Calcular tarifa</button>
+              <button class="start" id="startHome" onclick="showOptions()"> Home</button>
+              <button id="startLogout" onclick="showIndextPage()">Cerrar Sesión</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Preguntas frecuentes-->
+      <section id="answers">
+        <div id="startQuestion1">
+          <h4 class="preg1">¿Cómo verificar saldo? </h4>
+          <p class="resp1"> debe ingresar en el menú desplegable y seleccionar la opcion ver saldo" </p>
+        </div>
+        <div id="startQuestion1">
+          <h4 class="preg2">¿Cómo calcular saldo? </h4>
+          <p class="resp2"> debe ingresar el horario en el cual va a transitar en el transporte para que le generen el calculo real del metro
+            de santiago." </p>
+        </div>
+        <div id="startQuestion1">
+          <h4 class="preg3">¿Cómo ver perfil? </h4>
+          <p class="resp3"> debe ingresar en el menú desplegable y seleccionar la opcion ver mi perfil, en el cual podrá verificar la informacion
+            de sus tarjetas" </p>
+        </div>
+        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
+      </section>
+
+      <!-- Pagina del usuario -->
+      <section id="profile">
+        <div id="userPerfil" class="container-fluid2">
+          <div class="row" class="text-center" id="rowImg">
+            <img src="assets/src/docs/user.png" alt="imagen de usuario" id="userimg" srcset="">
+          </div>
+          <div id="mailUser">
+            <p name="" id="" cols="30" rows="10" id="text"> </p>
+          </div>
+        </div>
+        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
+      </section>
+
+      <!--saldo del user-->
+      <section id="checkCash">
+        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
+      </section>
+      <!--calcular la cantidad debitada segun hora y cuanto saldo posee entonces-->
+      <section id="calculate">
+        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
+      </section>
+      <!--se linkea bootstrap-->
+      <section id="Links">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+          crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+          crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+          crossorigin="anonymous"></script>
+        <!--link js-->
+        <script src="assets/src/js/main.js"></script>
+        <script src="assets/src/js/data.js"></script>
+      </section>
+</body>
+
+</html>
