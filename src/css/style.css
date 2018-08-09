@@ -1,3 +1,7 @@
+/* Gris #E6E6E6
+amarillo #F3BF05
+blanco #FFFFFF
+negro #000000 */ 
 .container-fluid{
   width: 100%;
   height: 100%;
@@ -24,14 +28,22 @@
 .form-group-row{
   width: 100%;
 }
+body{
+  background-color: #E6E6E6;
+}
+#home{
+  display: none;
+}
 .btn-Registro{
   background-color: rgb(241, 196, 15 );
   color: black;
   width: 100%;
 }
-body{
-  background-color: rgb(55, 55, 55);
+.container-fluid{
+  background-color: rgb(55,55,55);
   text-align: center;
+  width: 100vw;
+  height: 100vh;
 }
 #registro{
   background-color: rgb(55,55,55);
@@ -118,6 +130,10 @@ font-family: 'Source Sans Pro', sans-serif;
   display: none;
   margin-top: 20%;
 }
+.modal-body{
+  color: rgb(55, 55, 55);
+  text-align: justify;
+}
 #profile{
   display: none;
 }
@@ -158,4 +174,61 @@ h4{
   border: none;
   border-radius: 5%;
   margin-right: 2%;
+}
+
+/* Menu lateral */ 
+
+/*Hacemos que el menu adopte la posición más arriba posible*/
+.menu{
+  position: absolute;
+  top:0;
+  height: 100vh; /* viewport height, usa el 100% de la altura de la pantalla*/
+  width: 70vw;  /* viewport width 90% del an*/
+  transition: 0.5s ease-out;
+}
+button{
+  color:  rgb(55,55,55);
+  background-color: white;
+}
+
+.menu_closed{
+  left: -70vw;
+}
+
+.menu_open{
+  left: 0;
+}
+
+.close_button{ /* configurando boton de cierre del navbar*/
+  font-size: xx-large;
+  color: rgb(55,55,55);
+  position: absolute;
+  right: 10px;                   
+}
+
+.menu_content{
+  padding: 10px;
+  background-color: white;
+  color: rgb(55,55,55);
+  height: 100vh;
+  width: 70vw
+}
+
+@media(min-width: 768px){ /* esta medida se encuentra en bootstrap-> overview-> responsive breakpoints */
+  .menu{
+      width: 20vw; /*El menú va a tomar este ancho con pantallas de 768px hacia arriba*/
+  }
+
+  .menu_closed{
+      left:-20vw;
+  }
+}
+a{
+  display: inline-block;
+  color: rgb(55, 55, 55);
+  margin-top: 10%;
+}
+.fas{
+  color: rgb(241, 196, 15 );
+  margin-right: 10%;
 }

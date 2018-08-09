@@ -9,7 +9,7 @@ function showIndextPage() {
   $('#answers').hide();
   $('#checkCash').hide();
   $('#calculate').hide();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 //para registrarse
 function showRegisterPage() {
@@ -21,7 +21,7 @@ function showRegisterPage() {
   $('#answers').hide();
   $('#checkCash').hide();
   $('#calculate').hide();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 //para ver botones de fondo sin desplegar el dropdown
 function showOptions() {
@@ -33,65 +33,65 @@ function showOptions() {
   $('#answers').hide();
   $('#checkCash').hide();
   $('#calculate').hide();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 //para ver el perfil
 function showProfile() {
   console.log('4');
   $('#index').hide();
   $('#registro').hide();
-  $('#options').hide();
+  $('#options').show();
   $('#profile').show();
   $('#answers').hide();
   $('#checkCash').hide();
   $('#calculate').hide();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 //para ver las preguntas frecuentes
 function showComunAnswers() {
   console.log('5');
   $('#index').hide();
   $('#registro').hide();
-  $('#options').hide();
+  $('#options').show();
   $('#profile').hide();
   $('#answers').show();
   $('#checkCash').hide();
   $('#calculate').hide();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 //para ver el saldo
 function checkCash() {
   console.log('6');
   $('#index').hide();
   $('#registro').hide();
-  $('#options').hide();
+  $('#options').show();
   $('#profile').hide();
   $('#answers').hide();
   $('#checkCash').show();
   $('#calculate').hide();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 // para calcular tasa
 function calculate() {
   console.log('7');
   $('#index').hide();
   $('#registro').hide();
-  $('#options').hide();
+  $('#options').show();
   $('#profile').hide();
   $('#answers').hide();
   $('#checkCash').hide();
   $('#calculate').show();
-  $('#burgerQuestions').hide();
+  $('#home').hide();
 }
 //para ver el dropdown
-function drop() {
+function home() {
   console.log('8');
   $('#index').hide();
   $('#registro').hide();
-  $('#options').hide();
+  $('#options').show();
   $('#profile').hide();
   $('#answers').hide();
   $('#checkCash').hide();
   $('#calculate').hide();
-  $('#burgerQuestions').show();
+  $('#home').show();
 }

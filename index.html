@@ -9,6 +9,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!--iconos-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
   <!--se linkea css y favicon-->
   <link rel="icon" type="image/png" sizes="16x16" href="assets/img/imagen.png">
   <link rel="stylesheet" href="src/css/style.css">
@@ -17,7 +20,7 @@
 
 <body>
   <!--página de inicio-->
-  <section id="index">
+  <section class="container-fluid" id="index">
     <div class="text-center">
       <img src="assets/img/imagen.png" class="rounded" alt="imagen logo de trans lab">
     </div>
@@ -52,7 +55,7 @@
   </section>
 
   <!--página de registro (ya se implemento localStorage)-->
-  <section class="registro" id="registro">
+  <section class="container-fluid" class="registro" id="registro">
     <form>
       <div class="form-row">
         <div class="col-md-4 mb-3">
@@ -102,15 +105,15 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <strong>Información del Usuario. </strong> En el transcurso del tiempo que usted haga uso de los servicios puestos
+                    <strong>Información del Usuario.  <br> </strong> En el transcurso del tiempo que usted haga uso de los servicios puestos
                     a su disposición en o a través de la aplicación TRANS-LAB, se le puede pedir que nos proporcione cierta
-                    información personalizada (dicha información en lo sucesivo "Información del Usuario").
-                    <strong>Las políticas de uso y recopilación de información. </strong> con respecto a la privacidad de dicha Información
+                    información personalizada (dicha información en lo sucesivo "Información del Usuario").  <br>
+                    <strong>Las políticas de uso y recopilación de información. <br> </strong> con respecto a la privacidad de dicha Información
                     del Usuario se establecen en la Política de Privacidad del Sitio, la cual está incorporada al mismo como
                     referencia para todos los propósitos. Usted reconoce y acepta ser el único responsable de la exactitud
                     del contenido de la Información del Usuario.
                     <br>
-                    <strong>Conducta Prohibida del Usuario. </strong> Usted garantiza y está de acuerdo en que, mientras se encuentre
+                    <strong>Conducta Prohibida del Usuario.  <br> </strong> Usted garantiza y está de acuerdo en que, mientras se encuentre
                     gestionando o utilizando la aplicación TRANS-LAB, usted no: (a) desvirtuará su afiliación con alguna
                     otra persona o entidad; (b) intentará ganar acceso no autorizado a otras áreas (c) usará a manera desprestigiosa
                     la información que en la misma se encuentre.
@@ -124,84 +127,117 @@
           </label>
         </div>
       </div>
-      <button type="submit" onclick="showOptions()">Registrarme</button>
+      <button type="submit" onclick="home()">Registrarme</button>
     </form>
   </section>
-      <!--pagina de fonde donde aparecen botones que redireccionan a las mismas páginas que el dropdown-->
-      <section id="options">
-        <button class="start" id="startQuestion d-none" onclick="showComunAnswers()"> Preguntas frecuentes </button>
-        <button class="start" id="startProfile" onclick="showProfile()"> Mi perfil </button>
-        <button class="start" id="startCash" onclick="checkCash()"> Ver saldo</button>
-        <button class="start" id="startCalculate" onclick="calculate()"> Calcular tarifa</button>
-      </section>
-      <!--informacion dentro del dropdown-->
-      <section id="burgerQuestions">
-        <div class="pos-f-t">
-          <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-              <button class="start" id="startQuestion" onclick="showComunAnswers()"> Preguntas frecuentes </button>
-              <button class="start" id="startProfile" onclick="showProfile()"> Mi perfil </button>
-              <button class="start" id="startCash" onclick="checkCash()"> Ver saldo</button>
-              <button class="start" id="startCalculate" onclick="calculate()"> Calcular tarifa</button>
-              <button class="start" id="startHome" onclick="showOptions()"> Home</button>
-              <button id="startLogout" onclick="showIndextPage()">Cerrar Sesión</button>
-            </div>
-          </div>
+  <!--pagina de fonde donde aparecen botones que redireccionan a las mismas páginas que el dropdown-->
+  <section id="options">
+    <!--NavBar-->
+    <div class="pos-f-t">
+      <!-- Creando Navbar Side Menú, se borra div class="collapse" -->
+      <nav class="navbar navbar-dark bg-dark">
+        <!--Borrar data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"-->
+        <button onclick="toggleMenu()" class="navbar-toggler" type="button" aria-controls="navbarToggleExternalContent" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand">TRANS-LAB</a>
+      </nav>
+      <!-- Vertical Navs dentro de un div-->
+      <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
+      <!--Borrar   <li class="nav-item"> -->
+      <nav id="sideMenu" class="nav flex-column float-left menu bg-dark menu_closed">
+        <!-- d-none aparece en display property en bootstrap, sirve para que inicialmente el sideMenu este oculto -->
+        <!-- se agrega bg-dark para dar color negro al menu-->
+        <!-- Con float-left hacemos que flote hacia la izquierda -->
+        <div onclick="toggleMenu()" class="close_button">
+          <span aria-hidden="true">&times;</span>
         </div>
-      </section>
-      <!--Preguntas frecuentes-->
-      <section id="answers">
-        <div id="startQuestion1">
-          <h4 class="preg1">¿Cómo verificar saldo? </h4>
-          <p class="resp1"> debe ingresar en el menú desplegable y seleccionar la opcion ver saldo" </p>
+        <div class="menu_content">
+          <!--menu_content para separar el menu del botón x-->
+          <i class="fas fa-dollar-sign"></i>
+          <a id="nav-link" href="#" onclick="checkCash()"> Ver saldo</a>
+          <br>
+          <i class="fas fa-grip-horizontal"></i>
+          <a id="nav-link" href="#" onclick="calculate()"> Calcular Tarifa</a>
+          <br>
+          <i class="fas fa-user"></i>
+          <a id="nav-link" href="#" onclick="showProfile()"> Perfil</a>
+          <br>
+          <i class="fas fa-list-alt"></i>
+          <a id="nav-link active" href="#" onclick="showComunAnswers()"> Preguntas frecuentes</a>
+          <br>
+          <i class="fas fa-arrow-right"></i>
+          <a id="nav-link" href="#" onclick="closeMenu()"> Home</a>
+          <br>
+          <i class="fas fa-arrow-alt-circle-left"></i>
+          <a id="nav-link" href="#" onclick="showIndextPage()"> Cerrar sesión</a>
         </div>
-        <div id="startQuestion1">
-          <h4 class="preg2">¿Cómo calcular saldo? </h4>
-          <p class="resp2"> debe ingresar el horario en el cual va a transitar en el transporte para que le generen el calculo real del metro
-            de santiago." </p>
-        </div>
-        <div id="startQuestion1">
-          <h4 class="preg3">¿Cómo ver perfil? </h4>
-          <p class="resp3"> debe ingresar en el menú desplegable y seleccionar la opcion ver mi perfil, en el cual podrá verificar la informacion
-            de sus tarjetas" </p>
-        </div>
-        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
-      </section>
+      </nav>
+    </div>
+    <!--Fin NavBar-->
+  </section>
+  <!--Home Page, buttons -->
+  <section id="home">
+    <button class="start" id="startQuestion d-none" onclick="showComunAnswers()"> Preguntas frecuentes </button>
+    <button class="start" id="startProfile" onclick="showProfile()"> Mi perfil </button>
+    <button class="start" id="startCash" onclick="checkCash()"> Ver saldo</button>
+    <button class="start" id="startCalculate" onclick="calculate()"> Calcular tarifa</button>
+  </section>
+  <!--Preguntas frecuentes-->
+  <section id="answers">
+    <div id="startQuestion1">
+      <h4 class="preg1">¿Cómo verificar saldo? </h4>
+      <p class="resp1"> debe ingresar en el menú desplegable y seleccionar la opcion ver saldo" </p>
+    </div>
+    <div id="startQuestion1">
+      <h4 class="preg2">¿Cómo calcular saldo? </h4>
+      <p class="resp2"> debe ingresar el horario en el cual va a transitar en el transporte para que le generen el calculo real del metro de
+        santiago." </p>
+    </div>
+    <div id="startQuestion1">
+      <h4 class="preg3">¿Cómo ver perfil? </h4>
+      <p class="resp3"> debe ingresar en el menú desplegable y seleccionar la opcion ver mi perfil, en el cual podrá verificar la informacion
+        de sus tarjetas" </p>
+    </div>
+    <button type="submit" id='backButton' onclick="home()">volver</button>
+  </section>
 
-      <!-- Pagina del usuario -->
-      <section id="profile">
-        <div id="userPerfil" class="container-fluid2">
-          <div class="row" class="text-center" id="rowImg">
-            <img src="assets/img/user.png" alt="imagen de usuario" id="userimg" srcset="">
-          </div>
-          <div id="mailUser">
-            <p name="" id="" cols="30" rows="10" id="text"> </p>
-          </div>
-        </div>
-        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
-      </section>
+  <!-- Pagina del usuario -->
+  <section id="profile">
+    <div id="userPerfil" class="container-fluid2">
+      <div class="row" class="text-center" id="rowImg">
+        <img src="assets/img/user.png" alt="imagen de usuario" id="userimg" srcset="">
+      </div>
+      <div id="mailUser">
+        <p name="" id="" cols="30" rows="10" id="text"> </p>
+      </div>
+    </div>
+    <button type="submit" id='backButton' onclick="home()">volver</button>
+  </section>
 
-      <!--saldo del user-->
-      <section id="checkCash">
-        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
-      </section>
-      <!--calcular la cantidad debitada segun hora y cuanto saldo posee entonces-->
-      <section id="calculate">
-        <button type="submit" id = 'backButton' onclick="showOptions()">volver</button>
-      </section>
-      <!--se linkea bootstrap-->
-      <section id="Links">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-          crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-          crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-          crossorigin="anonymous"></script>
-        <!--link js-->
-        <script src="src/js/data.js"></script>
-        <script src="src/js/main.js"></script>
-        <script src="src/js/test.js"></script>
-      </section>
+  <!--saldo del user-->
+  <section id="checkCash">
+    <button type="submit" id='backButton' onclick="home()">volver</button>
+  </section>
+  <!--calcular la cantidad debitada segun hora y cuanto saldo posee entonces-->
+  <section id="calculate">
+    <button type="submit" id='backButton' onclick="home()">volver</button>
+  </section>
+  <!--se linkea bootstrap-->
+  <section id="Links">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <!--link js-->
+    <script src="src/js/data.js"></script>
+    <script src="src/js/main.js"></script>
+    <script src="src/js/test.js"></script>
+    <script src="src/js/sideMenu.js"></script>
+  </section>
 </body>
 
 </html>
