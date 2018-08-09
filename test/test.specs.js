@@ -34,18 +34,18 @@ describe('Validar password', () => {
   describe('Debería verificar el largo de la contraseña y el typeof', () => {
     it('Deberían ser sólo números', () => {
       //Caso de prueba
-      assert.equal(validatePassword("12345678"), true);
-      assert.equal(validatePassword("abcdefgh"), false);
-      assert.equal(validatePassword("abcd1234"), false);
+      assert.equal(validatePassword('12345678'), true);
+      assert.equal(validatePassword('abcdefgh'), false);
+      assert.equal(validatePassword('abcd1234'), false);
     });
     it('Debería verificar que sean máximo ocho caracteres', () => {
-      assert.equal(validatePassword("123456789"), false);
-      assert.equal(validatePassword("12345678"), true);
+      assert.equal(validatePassword('123456789'), false);
+      assert.equal(validatePassword('12345678'), true);
     });
     it('Deberían verificar que sea minimo un caracter', () => {
       //Caso de prueba
-      assert.equal(validatePassword("12345678"), true);
-      assert.equal(validatePassword(""), false);
+      assert.equal(validatePassword('12345678'), true);
+      assert.equal(validatePassword(''), false);
     });
   });
 });
