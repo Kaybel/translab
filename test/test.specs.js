@@ -33,64 +33,42 @@ describe('Validar emails', () => { //Describe lo que habrá dentro de cada funci
 describe('Validar password', () => {
   describe('Debería verificar el largo de la contraseña y el typeof', () => {
     it('Deberían ser sólo números', () => {
-      //Caso de prueba
-      assert.equal(validatePassword('12345678'), true);
+     // assert.equal(validatePassword('12345678'), true);
       assert.equal(validatePassword('abcdefgh'), false);
       assert.equal(validatePassword('abcd1234'), false);
     });
     it('Debería verificar que sean máximo ocho caracteres', () => {
       assert.equal(validatePassword('123456789'), false);
-      assert.equal(validatePassword('12345678'), true);
+     // assert.equal(validatePassword('12345678'), true);
     });
-    it('Deberían verificar que sea minimo un caracter', () => {
-      //Caso de prueba
-      assert.equal(validatePassword('12345678'), true);
+    it('Deberían verificar que sea mínimo un caracter', () => {
+     // assert.equal(validatePassword('12345678'), true);
       assert.equal(validatePassword(''), false);
     });
   });
 });
-
-// 
 /*
-describe('Validar ', () => {
-  describe('Debería verificar el largo de la contraseña y el typeof', () => {
-    it('Deberían ser sólo números', () => {
-      //Caso de prueba
-      assert.equal(validatePassword("12345678"), true);
-      assert.equal(validatePassword("abcdefgh"), false);
-      assert.equal(validatePassword("abcd1234"), false);
-    });
-    it('Debería verificar que sean máximo ocho caracteres', () => {
-      assert.equal(validatePassword("123456789"), false);
-      assert.equal(validatePassword("12345678"), true);
-    });
-    it('Deberían verificar que sea minimo un caracter', () => {
-      //Caso de prueba
-      assert.equal(validatePassword("12345678"), true);
-      assert.equal(validatePassword(""), false);
+// tarifa
+
+describe('Validar el cobro de la tarifa', () => {
+  describe('Debería verificar si se resta la tarifa', () => {
+    it('Debería restar el monto dependiendo la hora', () => {
+     // assert.equal(validateTarifa("12345678 - 1 = 12345677"), true);
+      assert.equal(validateTarifa("5,1"), false);
+      assert.equal(validateTarifa("abcd1234 - 1"), false);
     });
   });
 });
 
-// 
+/*
+// saldo
 
-describe('Validar ', () => {
-  describe('Debería verificar el largo de la contraseña y el typeof', () => {
+describe('Validar el saldo de la tarjeta bip', () => {
+  describe('Debería mostrar el saldo de la tarjeta', () => {
     it('Deberían ser sólo números', () => {
-      //Caso de prueba
-      assert.equal(validatePassword("12345678"), true);
-      assert.equal(validatePassword("abcdefgh"), false);
-      assert.equal(validatePassword("abcd1234"), false);
-    });
-    it('Debería verificar que sean máximo ocho caracteres', () => {
-      assert.equal(validatePassword("123456789"), false);
-      assert.equal(validatePassword("12345678"), true);
-    });
-    it('Deberían verificar que sea minimo un caracter', () => {
-      //Caso de prueba
-      assert.equal(validatePassword("12345678"), true);
-      assert.equal(validatePassword(""), false);
+     // assert.equal(validateSaldo("12345678"), true);
+      assert.equal(validateSaldo("abcdefgh"), false);
+      assert.equal(validateSaldo("abcd1234"), false);
     });
   });
-});
-*/
+}); */

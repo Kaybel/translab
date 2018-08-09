@@ -41,7 +41,7 @@
             </div>
             <div class="form-group-row">
               <div class="col-sm-10">
-                <button type="submit" class="btnIndex" id="startBtn" onclick="showOptions()">INICIAR SESIÓN</button>
+                <button type="submit" class="btnIndex" id="startBtn" onclick="home()">INICIAR SESIÓN</button>
               </div>
             </div>
           </form>
@@ -145,7 +145,7 @@
           aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand">TRANS-LAB</a>
+        <a class="navbar-trans">TRANS-LAB</a>
       </nav>
       <!-- Vertical Navs dentro de un div-->
       <!-- no colocamos ni container ni section por que queremos que el navbar cubra toda la pantalla, sino tendria un margen -->
@@ -236,6 +236,20 @@
       crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"></script>
+    <!-- link firebase-->
+    <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyB0pvjNAEyPSpY7lmV21XaJd6MVgxvaHtQ",
+        authDomain: "translab-8a998.firebaseapp.com",
+        databaseURL: "https://translab-8a998.firebaseio.com",
+        projectId: "translab-8a998",
+        storageBucket: "translab-8a998.appspot.com",
+        messagingSenderId: "607325848917"
+      };
+      firebase.initializeApp(config);
+    </script>
     <!--link js-->
     <script src="src/js/data.js"></script>
     <script src="src/js/main.js"></script>

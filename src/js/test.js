@@ -1,3 +1,4 @@
+// Email
 window.validateEmail = function (email) {
   if (email.indexOf('@') < 0) {
     return false;
@@ -28,6 +29,8 @@ window.validateEmail = function (email) {
   return true;
 };
 
+// Password
+
 window.validatePassword = function (password) {
   if (password.typeof != 'number') {
     return false;
@@ -40,3 +43,15 @@ window.validatePassword = function (password) {
   }
   return true;
 };
+
+// Saldo
+
+window.validateSaldo = function (saldo) {
+  
+}
+
+// Tarifa
+
+window.validateTarifa = function (saldo) {
+
+}

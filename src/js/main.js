@@ -1,6 +1,6 @@
 // dom
 // botones con funcionalidad para visibilizar otras páginas.
-// cuando cierre sesión
+
 function showIndextPage() {
   $('#index').show();
   $('#registro').hide();
