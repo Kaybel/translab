@@ -56,7 +56,7 @@
 
   <!--página de registro (ya se implemento localStorage)-->
   <section class="container-fluid" class="registro" id="registro">
-    <form>
+    <form action='javascript:void(0)'>
       <div class="form-row">
         <div class="col-md-4 mb-3">
           <label for="validationServer01">Nombre</label>
@@ -79,7 +79,7 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label for="validationServer03">Contraseña</label>
-          <input type="password" class="form-control is-valid" maxlength='8' minlength='6' id="validationServer03" placeholder="Ingresa tu contraseña"
+          <input type="password" class="form-control is-valid" maxlength='8' minlength='1' id="validationServer03" placeholder="Ingresa tu contraseña"
             required id="pass">
           <div class="invalid-feedback">Debe poseer máximo 8 carácteres y sólo pueden ser números</div>
         </div>
@@ -131,7 +131,7 @@
           </label>
         </div>
       </div>
-      <button type="submit" onclick="home()">Registrarme</button>
+      <button type="submit" onclick="fire()">Registrarme</button>
     </form>
   </section>
   <!--pagina de fonde donde aparecen botones que redireccionan a las mismas páginas que el dropdown-->
@@ -190,19 +190,27 @@
   </section>
   <!--Preguntas frecuentes-->
   <section id="answers">
-    <div id="startQuestion1">
-      <h4 class="preg1">¿Cómo verificar saldo? </h4>
+    <div class="tittle" id="rowYellow">
+      <br>
+      <p id="frencuentes">PREGUNTAS
+        <br> FRECUENTES</p>
+    </div>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" class="preg1" id="startQuestion1"
+      aria-expanded="false">¿Cómo verificar saldo?</a>
+    <div class="dropdown-menu">
       <p class="resp1"> debe ingresar en el menú desplegable y seleccionar la opcion ver saldo" </p>
     </div>
-    <div id="startQuestion1">
-      <h4 class="preg2">¿Cómo calcular saldo? </h4>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" class="preg2" id="startQuestion2"
+      aria-expanded="false">¿Cómo calcular saldo? </a>
+    <div class="dropdown-menu">
       <p class="resp2"> debe ingresar el horario en el cual va a transitar en el transporte para que le generen el calculo real del metro de
         santiago." </p>
     </div>
-    <div id="startQuestion1">
-      <h4 class="preg3">¿Cómo ver perfil? </h4>
+    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" class="preg3" id="startQuestion3"
+      aria-expanded="false">¿Cómo ver perfil?</a>
+    <div class="dropdown-menu">
       <p class="resp3"> debe ingresar en el menú desplegable y seleccionar la opcion ver mi perfil, en el cual podrá verificar la informacion
-        de sus tarjetas" </p>
+        de sus tarjetas"</p>
     </div>
     <button type="submit" id='backButton' onclick="home()">volver</button>
   </section>
@@ -210,11 +218,8 @@
   <!-- Pagina del usuario -->
   <section id="profile">
     <div id="userPerfil" class="container-fluid2">
-      <div class="row" class="text-center" id="rowImg">
+      <div class="text-center" id="rowImg">
         <img src="assets/img/user.png" alt="imagen de usuario" id="userimg" srcset="">
-      </div>
-      <div id="mailUser">
-        <p name="" id="" cols="30" rows="10" id="text"> </p>
       </div>
     </div>
     <button type="submit" id='backButton' onclick="home()">volver</button>
@@ -237,6 +242,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"></script>
     <!-- link firebase-->
+
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -255,6 +261,7 @@
     <script src="src/js/main.js"></script>
     <script src="src/js/test.js"></script>
     <script src="src/js/sideMenu.js"></script>
+    <script src="src/js/firebase.js"></script>
   </section>
 </body>
 

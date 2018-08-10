@@ -23,18 +23,6 @@ function showRegisterPage() {
   $('#calculate').hide();
   $('#home').hide();
 }
-//para ver botones de fondo sin desplegar el dropdown
-function showOptions() {
-  console.log('3');
-  $('#index').hide();
-  $('#registro').hide();
-  $('#options').show();
-  $('#profile').hide();
-  $('#answers').hide();
-  $('#checkCash').hide();
-  $('#calculate').hide();
-  $('#home').hide();
-}
 //para ver el perfil
 function showProfile() {
   console.log('4');
