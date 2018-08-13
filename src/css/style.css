@@ -21,6 +21,9 @@ p{
   font-family: 'Source Sans Pro', sans-serif;
   }
 /* Index Page */
+#startBtn{
+  width: 75vw;
+}
 #inher{
   background-color: inherit;
   color: rgb(241, 196, 15 );
@@ -88,6 +91,16 @@ p{
   border: none;
 }
 /* Register Page */
+.reg{
+  width: 90vw;
+}
+#name{
+  margin-top: 20%;
+}
+#check{
+  text-align: auto;
+  margin-left: 15%;
+}
 #registro{
   background-color: rgb(55,55,55);
   text-align: center;

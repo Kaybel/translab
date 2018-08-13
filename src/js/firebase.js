@@ -1,20 +1,17 @@
 // Registrarse
 
 function fire() {
-  
   home();
-
   let email = document.getElementById('mail').value;
   let password = document.getElementById('pass').value;
 
   firebase.auth().createUserWithEmailAndPassword(email, password)
-    .then(() =>{
-      console.log('bien, se loguea!');
+    .then(() => {
     })
-    .catch(function(error) {
+    .catch(function (error) {
       // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+      var errorCode = error.code;
+      var errorMessage = error.message;
       // ...
     });
 
