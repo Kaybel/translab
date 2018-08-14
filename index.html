@@ -61,65 +61,70 @@
   <!--página de registro-->
   <section class="container-fluid" class="registro" id="registro">
     <!--nombre-->
-    <label id="name">Nombre</label><br>
-    <input type="text" class="reg" placeholder="Ingresa tu nombre" >
+    <label id="name">Nombre</label>
+    <br>
+    <input type="text" class="reg" placeholder="Ingresa tu nombre">
     <br>
     <!--apellido-->
-    <label>Apellido</label><br>
-    <input type="text" class="reg" placeholder="Ingresa tu apellido" >
+    <label>Apellido</label>
+    <br>
+    <input type="text" class="reg" placeholder="Ingresa tu apellido">
     <br>
     <!--mail-->
-    <label>Email</label><br>
+    <label>Email</label>
+    <br>
     <input type="text" class="reg" placeholder="Ingresa tu mail" id="mail">
     <br>
     <!--password-->
-    <label>Contraseña</label><br>
+    <label>Contraseña</label>
+    <br>
     <input type="password" class="reg" maxlength='8' minlength='1' placeholder="Ingresa tu contraseña" id="pass">
     <br>
     <!--check-->
-      <div id="check">
-    <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
-    <label class="form-check-label" for="invalidCheck">
-      Estoy de acuerdo con los
-      <!-- Button trigger modal -->
-      <button type="button" id="conditionsPage" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-        términos y condiciones
-      </button>
+    <div id="check">
+      <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+      <label class="form-check-label" for="invalidCheck">
+        Estoy de acuerdo con los
+        <!-- Button trigger modal -->
+        <button type="button" id="conditionsPage" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+          términos y condiciones
+        </button>
 
-      <!-- Modal -->
-      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              <strong>Información del Usuario.
-                <br> </strong> En el transcurso del tiempo que usted haga uso de los servicios puestos a su disposición en o
-              a través de la aplicación TRANS-LAB, se le puede pedir que nos proporcione cierta información personalizada
-              (dicha información en lo sucesivo "Información del Usuario").
-              <br>
-              <strong>Las políticas de uso y recopilación de información.
-                <br> </strong> con respecto a la privacidad de dicha Información del Usuario se establecen en la Política de
-              Privacidad del Sitio, la cual está incorporada al mismo como referencia para todos los propósitos. Usted reconoce
-              y acepta ser el único responsable de la exactitud del contenido de la Información del Usuario.
-              <br>
-              <strong>Conducta Prohibida del Usuario.
-                <br> </strong> Usted garantiza y está de acuerdo en que, mientras se encuentre gestionando o utilizando la aplicación
-              TRANS-LAB, usted no: (a) desvirtuará su afiliación con alguna otra persona o entidad; (b) intentará ganar acceso
-              no autorizado a otras áreas (c) usará a manera desprestigiosa la información que en la misma se encuentre.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">He leido los terminos</button>
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Términos y Condiciones</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <strong>Información del Usuario.
+                  <br> </strong> En el transcurso del tiempo que usted haga uso de los servicios puestos a su disposición en
+                o a través de la aplicación TRANS-LAB, se le puede pedir que nos proporcione cierta información personalizada
+                (dicha información en lo sucesivo "Información del Usuario").
+                <br>
+                <strong>Las políticas de uso y recopilación de información.
+                  <br> </strong> con respecto a la privacidad de dicha Información del Usuario se establecen en la Política de
+                Privacidad del Sitio, la cual está incorporada al mismo como referencia para todos los propósitos. Usted
+                reconoce y acepta ser el único responsable de la exactitud del contenido de la Información del Usuario.
+                <br>
+                <strong>Conducta Prohibida del Usuario.
+                  <br> </strong> Usted garantiza y está de acuerdo en que, mientras se encuentre gestionando o utilizando la
+                aplicación TRANS-LAB, usted no: (a) desvirtuará su afiliación con alguna otra persona o entidad; (b) intentará
+                ganar acceso no autorizado a otras áreas (c) usará a manera desprestigiosa la información que en la misma
+                se encuentre.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">He leido los terminos</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </label>
-  </div>
+      </label>
+    </div>
     <button type="submit" onclick="fire()">Registrarme</button>
   </section>
   <!--pagina de fondo donde aparecen botones que redireccionan a las mismas páginas que el dropdown-->
@@ -160,7 +165,7 @@
           <a id="nav-link active" href="#" onclick="showComunAnswers()"> Preguntas frecuentes</a>
           <br>
           <i class="fas fa-arrow-right"></i>
-          <a id="nav-link" href="#" onclick="closeMenu()"> Home</a>
+          <a id="nav-link" href="#" onclick="home()"> Home</a>
           <br>
           <i class="fas fa-arrow-alt-circle-left"></i>
           <a id="nav-link" href="#" onclick="showIndextPage()"> Cerrar sesión</a>
@@ -210,6 +215,17 @@
         <img src="assets/img/user.png" alt="imagen de usuario" id="userimg" srcset="">
       </div>
     </div>
+    <div id="cardUser">
+      <div class="card">
+        <div class="card-body" id="printUser">
+        </div>
+      </div>
+    </div>
+    <input type="text" id="tarjeta" maxlength='8' minlength='1' placeholder="Ingresa acá tu numero de bip">
+    <br>
+    <button onclick="bipTar()">Agregar tarjeta</button>
+    <div id="cardTarj">
+    </div>
     <button type="submit" id='backButton' onclick="home()">volver</button>
   </section>
 
@@ -219,6 +235,8 @@
   </section>
   <!--calcular la cantidad debitada segun hora y cuanto saldo posee entonces-->
   <section id="calculate">
+    <select class="form-control" id="selectDeBip">
+    </select>
     <button type="submit" id='backButton' onclick="home()">volver</button>
   </section>
   <!--se linkea bootstrap-->

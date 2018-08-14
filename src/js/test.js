@@ -44,14 +44,14 @@ window.validatePassword = function (password) {
   return true;
 };
 
-// Saldo
-
-window.validateSaldo = function (saldo) {
-  
-}
-
 // Tarifa
 
-window.validateTarifa = function (saldo) {
-
+window.validateTarjeta = function (tarjeta) {
+  if (tarjeta.length > 8) {
+    return false
+  }
+  if (tarjeta.length < 0) {
+    return false
+  }
+  return true;
 }

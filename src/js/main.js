@@ -1,6 +1,6 @@
 // dom
 // botones con funcionalidad para visibilizar otras páginas.
-
+//pagina de inicio para ingresar a la app
 function showIndextPage() {
   $('#index').show();
   $('#registro').hide();
@@ -13,7 +13,6 @@ function showIndextPage() {
 }
 //para registrarse
 function showRegisterPage() {
-  console.log('2');
   $('#index').hide();
   $('#registro').show();
   $('#options').hide();
@@ -22,10 +21,10 @@ function showRegisterPage() {
   $('#checkCash').hide();
   $('#calculate').hide();
   $('#home').hide();
+  closeMenu()
 }
 //para ver el perfil
 function showProfile() {
-  console.log('4');
   $('#index').hide();
   $('#registro').hide();
   $('#options').show();
@@ -34,10 +33,10 @@ function showProfile() {
   $('#checkCash').hide();
   $('#calculate').hide();
   $('#home').hide();
+  closeMenu()
 }
 //para ver las preguntas frecuentes
 function showComunAnswers() {
-  console.log('5');
   $('#index').hide();
   $('#registro').hide();
   $('#options').show();
@@ -46,10 +45,10 @@ function showComunAnswers() {
   $('#checkCash').hide();
   $('#calculate').hide();
   $('#home').hide();
+  closeMenu()
 }
 //para ver el saldo
 function checkCash() {
-  console.log('6');
   $('#index').hide();
   $('#registro').hide();
   $('#options').show();
@@ -58,10 +57,10 @@ function checkCash() {
   $('#checkCash').show();
   $('#calculate').hide();
   $('#home').hide();
+  closeMenu()
 }
-// para calcular tasa
+// para calcular la tarifa
 function calculate() {
-  console.log('7');
   $('#index').hide();
   $('#registro').hide();
   $('#options').show();
@@ -70,10 +69,10 @@ function calculate() {
   $('#checkCash').hide();
   $('#calculate').show();
   $('#home').hide();
+  closeMenu()
 }
-//para ver el dropdown
+//para ver la pagina de inicio
 function home() {
-  console.log('8');
   $('#index').hide();
   $('#registro').hide();
   $('#options').show();
@@ -82,4 +81,19 @@ function home() {
   $('#checkCash').hide();
   $('#calculate').hide();
   $('#home').show();
+  closeMenu()
 }
+// para que imprima la info de la tarjeta en la pagina.
+ let inputTarjeta = document.getElementById("tarjeta");
+ function bipTar() {
+  let objTarjeta = {
+    bip: inputTarjeta.value
+  };
+ 
+  bipInFirebase(objTarjeta);
+  inputTarjeta.value = "";
+  let divHTMLTarjeta = document.getElementById("cardTarj");
+  let divDeImpresionBip = document.createElement("div");
+  divHTMLTarjeta.appendChild(divDeImpresionBip);
+  divDeImpresionBip.innerHTML = Object.values(objTarjeta);
+ };

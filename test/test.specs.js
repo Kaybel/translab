@@ -47,28 +47,18 @@ describe('Validar password', () => {
     });
   });
 });
-/*
-// tarifa
 
-describe('Validar el cobro de la tarifa', () => {
-  describe('Debería verificar si se resta la tarifa', () => {
-    it('Debería restar el monto dependiendo la hora', () => {
-     // assert.equal(validateTarifa("12345678 - 1 = 12345677"), true);
-      assert.equal(validateTarifa("5,1"), false);
-      assert.equal(validateTarifa("abcd1234 - 1"), false);
+// tarjeta
+describe('Validar tarjeta', () => {
+  describe('Debería verificar el largo de la bip', () => {
+    it('Debería verificar que sean máximo ocho caracteres', () => {
+      assert.equal(validateTarjeta('123456789'), false);
+    });
+    it('Deberían verificar que sea mínimo un caracter', () => {
+      assert.equal(validateTarjeta(''), false);
     });
   });
 });
 
-/*
 // saldo
-
-describe('Validar el saldo de la tarjeta bip', () => {
-  describe('Debería mostrar el saldo de la tarjeta', () => {
-    it('Deberían ser sólo números', () => {
-     // assert.equal(validateSaldo("12345678"), true);
-      assert.equal(validateSaldo("abcdefgh"), false);
-      assert.equal(validateSaldo("abcd1234"), false);
-    });
-  });
-}); */
+// resta de la tarifa
